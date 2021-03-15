@@ -12,6 +12,8 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import Badge from '@material-ui/core/Badge';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -153,7 +155,7 @@ export default function Dashboard() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            XpressCloud
+            XpressCloud  <small>from</small>  XpressLite
           </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
@@ -197,12 +199,12 @@ export default function Dashboard() {
                 </Grid>
                 <Grid item xs={3}>
                     <Paper style={{backgroundColor:"rgb(40,44,53)"}} className={classes.papers}>
-                        <Typography variant="h6" component="p" style={{color:"white"}}>
-                            Accidents
+                        <Typography variant="body2" component="p" style={{color:"white"}}>
+                            <b>ACCIDENTS</b><br />
                         </Typography>
 
                         <Typography variant="h5" style={{ color: "#ff8080" }}>
-                            <b>-103</b>
+                        <CircularProgress color="secondary" />
                         </Typography>
                     </Paper>
                 </Grid>
@@ -212,8 +214,10 @@ export default function Dashboard() {
                            Traffic Status
                         </Typography>
                         <Typography variant="body1" style={{color:"#50c878"}}>
-                            Monitoring .. 
+                            Collecting info ... 
                         </Typography>
+                        <LinearProgress variant="buffer" value={10} valueBuffer={2} />
+
                     </Paper>
                 </Grid>
                 <Grid item xs={3}>
@@ -252,7 +256,7 @@ export default function Dashboard() {
 
             <Grid item xs={12}>
 
-              <Paper className={classes.paper}>
+              <Paper className={classes.paper} >
                 <Orders />
               </Paper>
             </Grid>

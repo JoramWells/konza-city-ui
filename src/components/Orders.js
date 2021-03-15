@@ -33,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
 export default function Orders() {
   const classes = useStyles();
   return (
-    <React.Fragment>
-      <Table size="small">
+    <React.Fragment >
+      <Table size="small" >
         <TableHead>
           <TableRow>
             <TableCell>Date Lost</TableCell>
