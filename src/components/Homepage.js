@@ -3,14 +3,25 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import { Grid } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
+import MuiAlert from '@material-ui/lab/Alert';
 import stats from './stats.svg'
+import me from './me.jpeg'
+import onsare from './onsare.jpeg'
+import kim from './kim.jpeg'
+import pesh from './pesh.jpeg'
 import medical from './medical.svg'
 import {Link} from 'react-router-dom'
+
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,8 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
   grids:{
       color:"white",
-      paddingTop:theme.spacing(5),
-      marginTop:"100px",
+      marginTop:"50px",
       marginLeft:theme.spacing(5),
 
   },
@@ -123,66 +133,169 @@ export default function SearchAppBar() {
       </AppBar>
       <Grid container style={{height:"500px", backgroundColor:"rgb(22,22,29)"}}>
           <Grid className={classes.grids}  item xs={6}>
-              <Typography variant="h4">
-                  Welcome to XpressCloud Platform
+              <Typography variant="h4" style={{paddingBottom:"15px", paddingTop:"15px"}}>
+                  Welcome to XpressCloud
+              </Typography>
+              <Box style={{paddingLeft:"50px", paddingRight:"50px"}}>
+              <Typography component="p">
+                 An online  platform that uses modern technology to provide real-time infotmation about traffic status.
               </Typography>
               <Typography component="p">
-                  An Online platform that helps you manage traffic.
+                The system uses AI to collect data and Machine Learning to analyze the information.
               </Typography>
+              <Button color="primary" variant="outlined" style={{marginTop:"20px"}}>LEARN MORE</Button>
+              </Box>
+
 
           </Grid>
           <Grid style={{marginTop:"20px"}} item xs={5}>
               <img src={stats} alt="omg" style={{width:"500px"}} />
           </Grid>
       </Grid>
-      <Grid container className={classes.grid2}>
+      <Grid className={classes.grid2} >
+      <Typography variant="h4" style={{paddingTop:"30px"}}>
+          Experience our technology
+        </Typography>
+        <Typography variant="h5">
+          Our services
+        </Typography>
+       <hr/>
+      <Grid container >
+
 
           <Grid item xs={3} className={classes.grids}>
               <Typography variant="h6">
-                 Parking Lots
+                 Traffic status
               </Typography>
               <p>
-                  ExpressCloud helps you view available parking lots
+                 
+                  Shortest routes<br/>
+                  Traffic flow<br/>
+                  Avoid traffic
+
               </p>
           </Grid>
           <Grid xs={3} item className={classes.grids}>
               <Typography variant="h6">
-                  Recent Accidents
+                   Accidents
               </Typography>
               <p>
-                  ExpressCloud helps you view available parking lots
+                  Recent accidents<br/>
+                  Updates
               </p>
           </Grid>
           <Grid xs={3} item className={classes.grids}>
               <Typography variant="h6">
-                  Traffic Updates
+                  Parking lots
               </Typography>
+              <p>
+                Available spaces
+              </p>
 
           </Grid>
-
+          </Grid>
       </Grid>
       <Grid container style={{height:"300px", backgroundColor:"rgb(22,22,29)"}}>
           <Grid item xs={5}>
           <img src={medical} alt="woe" style={{width:"200px", marginTop:"60px"}} />
           </Grid>
           <Grid item style={{marginTop:"50px", color:"white"}}>
-              <Typography variant="h4" style={{color:"white"}}>
-                  Helped save lives
+              <Typography variant="h4" style={{color:"	#D8D8D8"}}>
+                  Help save lives.
               </Typography>
-          <Typography component="p" color="textSecondary" style={{color:"white"}}>
-              XpressCloud has helped save lives in ways that we never thought it was possible
+          <Typography component="p" color="textSecondary" style={{color:"	#A9A9A9", paddingTop:"20px", paddingBottom:"20px"}}>
+              XpressCloud has helped save lives in ways that we never thought it was possible.
+              <br/>
+              Ambulances are able to arrive at places of accidents and hospitals more faster.
+              <br/>
+              Police cars reach at places od crime more faster.
+
           </Typography>
+          <Alert severity="success">Be a part of this!</Alert>
+
           </Grid>
 
 
 
       </Grid>
-      <Grid  container style={{height:"300px", backgroundColor:"rgb(40,44,53)"}}>
+      <Grid   spacing={3} style={{height:"350px", backgroundColor:"rgb(40,44,53)", color:"	#F5F5F5"}}>
+        <Typography variant="h4" style={{paddingTop:"30px", paddingBottom:"20px"}}>
+          Our Team
+        </Typography>
+<Grid container>
+            <Grid item xs={3}>
+              <img src={me} alt="abc" style={{width:"150px", borderRadius:"100px"}} />
+              <Typography variant="h5">
+              Joram Bramuel
+            </Typography>
+            <Typography variant="body1">
+              Software Developer
+            </Typography>
+            </Grid>
 
+            <Grid item xs={3}>
+
+            <img src={onsare} alt="abc" style={{width:"150px", borderRadius:"100px"}} />
+
+            <Typography variant="h5">
+              Dennis Onsare
+            </Typography>
+            <Typography variant="body1">
+              Software Engineer<br/>
+              Acturial Scientist
+            </Typography>
+
+            </Grid>
+            <Grid item xs={3}>
+            <img src={kim} alt="abc" style={{width:"150px", borderRadius:"100px"}} />
+            <Typography variant="h5">
+              Samuel Kimani
+            </Typography>
+            <Typography variant="body1">
+              Software Developer
+            </Typography>
+
+            </Grid>
+            <Grid item xs={3}>
+            <img src={pesh} alt="abc" style={{width:"150px", borderRadius:"100px"}} />
+            <Typography variant="h5">
+              Patience Njeri
+            </Typography>
+            <Typography variant="body1">
+              Software Developer
+            </Typography>
+
+            </Grid>
+
+            </Grid>
       </Grid>
-      <Grid container style={{height:"400px", backgroundColor:"rgb(22,22,29)"}}>
+      <Grid style={{height:"400px", backgroundColor:"rgb(22,22,29)"}}>
+      <Typography variant="h4" style={{color:"white", paddingTop:"20px"}} >
+              Learn More about XpressLite
+
+          </Typography>
+
+      <Grid container >
+
+          <Grid item xs={3} style={{color:"white"}}>
+              <Typography variant="h6" component="p">
+                  What is XpressLite?
+              </Typography>
+          </Grid>
+          <Grid item xs={3} style={{color:"white"}}>
+              <Typography variant="h6" component="p">
+                  Car Tracking
+              </Typography>
+          </Grid>
+          <Grid item xs={3} style={{color:"white"}}>
+          <Typography variant="h6" component="p">
+              Making payments
+              </Typography>
+          </Grid>
 
 </Grid>
+      </Grid>
+     
 
     </div>
   );
